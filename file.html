@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Интерактивті ойындар - Электрондық кестелер</title>
+<style>
+  body {
+    margin:0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f8ff;
+    color: #222;
+  }
+  header {
+    display: flex;
+    align-items: center;
+    background: #007acc;
+    color: white;
+    padding: 10px 20px;
+    font-weight: 600;
+    font-size: 18px;
+  }
+  header img {
+    height: 32px;
+    margin-right: 10px;
+  }
+  nav {
+    margin-left: 30px;
+    display: flex;
+    gap: 18px;
+  }
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 12px;
+    border-radius: 6px;
+  }
+  nav a.games {
+    background: #ffcc00;
+    color: #222;
+  }
+  nav a:hover:not(.games) {
+    text-decoration: underline;
+  }
+  main {
+    display: flex;
+    padding: 30px 50px;
+    gap: 40px;
+    justify-content: center;
+    background: #e6f0fa;
+  }
+  .left-illustration {
+    flex: 1;
+    max-width: 300px;
+    position: relative;
+  }
+  .left-illustration img {
+    width: 100%;
+    border-radius: 20px;
+  }
+  .sticky-note {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #ffc;
+    border: 2px solid #b58900;
+    padding: 8px 12px;
+    font-weight: 700;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px #aaa;
+    font-size: 14px;
+    max-width: 180px;
+  }
+  .content-center {
+    flex: 3;
+    max-width: 600px;
+    text-align: center;
+  }
+  .content-center h1 {
+    font-size: 3rem;
+    color: #004080;
+    margin-bottom: 8px;
+  }
+  .content-center p.subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #0059b3;
+  }
+  .play-button {
+    background: #ffcc00;
+    color: #222;
+    font-weight: 700;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  .right-decor {
+    flex: 1.2;
+    max-width: 250px;
+    position: relative;
+  }
+  .right-decor img {
+    width: 100%;
+    border-radius: 20px;
+  }
+  .note-lightbulb {
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+    background: #fff9c4;
+    border-radius: 12px;
+    padding: 6px 10px;
+    box-shadow: 1px 1px 5px #bbb;
+    font-weight: 600;
+    font-size: 14px;
+    color: #6a5400;
+  }
+  .games-list {
+    display: flex;
+    gap: 18px;
+    margin-top: 40px;
+    justify-content: center;
+  }
+  .game-card {
+    flex: 1;
+    max-width: 180px;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 1px 1px 10px rgb(0 0 0 / 0.1);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .game-card h3 {
+    margin-top: 8px;
+    font-size: 1.2rem;
+  }
+  .game-card p {
+    font-size: 0.9rem;
+    margin: 10px 0 18px 0;
+  }
+  .btn-start {
+    background: rgba(255 255 255 / 0.9);
+    color: #333;
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 700;
+    box-shadow: 0 3px 8px rgb(0 0 0 / 0.1);
+  }
+  /* Colors for cards */
+  .blue { background: #007acc; }
+  .green { background: #28a745; }
+  .purple { background: #6f42c1; }
+  .orange { background: #fd7e14; }
+  .pink { background: #e83e8c; }
+
+  footer {
+    background: #007acc;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  footer .icon {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+</style>
+</head>
+<body>
+<header>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Microsoft_Office_Excel_%282018%E2%80%93present%29.svg" alt="Spreadsheet Icon" />
+  Электрондық кестелерде мәселелерді шешу
+  <nav>
+    <a href="#">Басты бет</a>
+    <a href="#">Теория</a>
+    <a href="#">Практика</a>
+    <a href="#">Тест</a>
+    <a href="#" class="games">Ойындар</a>
+    <a href="#">Нәтижелер</a>
+    <a href="#">Қателермен жұмыс</a>
+    <a href="#" title="Профиль"><img src="https://img.icons8.com/ios-filled/24/ffffff/user-male-circle.png"/></a>
+  </nav>
+</header>
+
+<main>
+  <div class="left-illustration">
+    <img src="https://i.ibb.co/7vGqWQ5/boy-laptop-thumbsup.png" alt="Boy with laptop" />
+    <div class="sticky-note">
+      Білім — болашаққа жол!
+    </div>
+  </div>
+
+  <div class="content-center">
+    <h1>Интерактивті ойындар</h1>
+    <p class="subtitle">5 қызықты 3D ойын арқылы электрондық кестелерді ойнап отырып, меңгер!</p>
+    <button class="play-button">Ойын ойна — білімді бекіт!</button>
+
+    <div class="games-list" aria-label="Ойындар тізімі">
+      <div class="game-card blue">
+        <h3>1. Математикалық құпия</h3>
+        <p>Формулалар мен функцияларды қолданып, жасырын сандарды тап.</p>
+        <button class="btn-start" onclick="alert('Математикалық құпия ойынын бастау')">Ойынды бастау</button>
+      </div>
+      <div class="game-card green">
+        <h3>2. Логикалық лабиринт</h3>
+        <p>Электрондық кестедегі логикалық шарттарды шеш.</p>
+        <button class="btn-start" onclick="alert('Логикалық лабиринт ойынын бастау')">Ойынды бастау</button>
+      </div>
+      <div class="game-card purple">
+        <h3>3. Статистикалық сайыс</h3>
+        <p>Мәліметтерді талдап, қорытынды жаса.</p>
+        <button class="btn-start" onclick="alert('Статистикалық сайыс ойынын бастау')">Ойынды бастау</button>
+      </div>
+      <div class="game-card orange">
+        <h3>4. Кесте құрастыру</h3>
+        <p>Берілген мәліметтерден дұрыс кесте жаса.</p>
+        <button class="btn-start" onclick="alert('Кесте құрастыру ойынын бастау')">Ойынды бастау</button>
+      </div>
+      <div class="game-card pink">
+        <h3>5. Интерактивті ертегі</h3>
+        <p>Сюжетке негізделген тапсырмалар арқылы ойна.</p>
+        <button class="btn-start" onclick="alert('Интерактивті ертегі ойынын бастау')">Ойынды бастау</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="right-decor">
+    <img src="https://i.ibb.co/gDq3gZv/chart-tablet.png" alt="Tablet with chart" />
+    <div class="note-lightbulb">Әр ойын — жаңа мүмкіндік!</div>
+  </div>
+</main>
+
+<footer>
+  <div class="icon">🎮 Ойнау арқылы үйрен!</div>
+  <div class="icon">📘 Білімді тексер!</div>
+  <div class="icon">🏆 Жеңіске жет!</div>
+</footer>
+
+</body>
+</html>
